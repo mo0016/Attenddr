@@ -2,7 +2,8 @@ import type { JSX } from "react";
 
 type Plan = {
   name: string;
-  sub: string;
+  price: string;
+  badge: string;
   features: string[];
   cta: string;
   subject: string;
@@ -22,11 +23,12 @@ const iconProps = {
 const plans: Plan[] = [
   {
     name: "Terminal",
-    sub: "Own the hardware",
+    price: "Own the hardware",
+    badge: "One-time setup",
     features: [
-      "One-time cost, or rolled into your subscription",
       "NFC reader, camera and microphone included",
       "Set up once, running every day",
+      "One-time cost, or rolled into your subscription",
     ],
     cta: "Enquire",
     subject: "Enquire%20about%20the%20Terminal",
@@ -39,7 +41,9 @@ const plans: Plan[] = [
   },
   {
     name: "School plan",
-    sub: "Billed per campus or per student",
+    price: "Custom quote",
+    badge: "Most popular",
+    featured: true,
     features: [
       "Full dashboard and reports per class and term",
       "Auto-transcribed lessons with built quizzes",
@@ -48,7 +52,6 @@ const plans: Plan[] = [
     ],
     cta: "Get a quote",
     subject: "Get%20a%20quote%20for%20the%20School%20plan",
-    featured: true,
     icon: (
       <svg {...iconProps}>
         <rect x="3" y="4" width="18" height="16" rx="2" />
@@ -59,11 +62,12 @@ const plans: Plan[] = [
   },
   {
     name: "Parent add-on",
-    sub: "Optional, priced by the school",
+    price: "Optional",
+    badge: "Revenue share",
     features: [
-      "Revenue share on offer",
       "Same-day absence alerts",
       "Weekly progress summary per child",
+      "Revenue share on offer",
     ],
     cta: "Enquire",
     subject: "Enquire%20about%20the%20Parent%20add-on",
@@ -80,9 +84,13 @@ export default function Pricing() {
   return (
     <section className="pricing" id="pricing">
       <div className="wrap">
-        <div className="section-head">
+        <div className="section-head center">
           <div className="tag">Pricing</div>
           <h2>Priced around your school, not a fixed plan</h2>
+          <p>
+            Pick the terminal, pick the plan, add parents if you want them on
+            board. Exact numbers are worked out with each school.
+          </p>
         </div>
         <div className="price-grid">
           {plans.map((plan) => (
@@ -90,14 +98,12 @@ export default function Pricing() {
               className={`price-card${plan.featured ? " featured" : ""}`}
               key={plan.name}
             >
-              {plan.featured && (
-                <span className="price-badge">Most popular</span>
-              )}
-              <div className="price-icon" aria-hidden="true">
+              <div className="price-media" aria-hidden="true">
                 {plan.icon}
+                <span className="price-badge">{plan.badge}</span>
               </div>
               <h4>{plan.name}</h4>
-              <p className="price-sub">{plan.sub}</p>
+              <p className="price-sub">{plan.price}</p>
               <ul>
                 {plan.features.map((feature) => (
                   <li key={feature}>
@@ -118,7 +124,7 @@ export default function Pricing() {
               </ul>
               <a
                 className={`btn ${
-                  plan.featured ? "btn-primary" : "btn-ghost"
+                  plan.featured ? "btn-mint" : "btn-outline"
                 }`}
                 href={`mailto:hello@attenddr.com?subject=${plan.subject}`}
               >
@@ -127,10 +133,21 @@ export default function Pricing() {
             </div>
           ))}
         </div>
-        <p className="price-note">
-          Exact numbers are worked out with each school. Get in touch for a
-          quote.
-        </p>
+
+        <div className="promo">
+          <h3>Free 30-day pilot on one campus</h3>
+          <div className="promo-actions">
+            <a
+              className="btn btn-primary"
+              href="mailto:hello@attenddr.com?subject=Start%20a%20free%2030-day%20pilot"
+            >
+              Start the pilot
+            </a>
+            <a className="btn btn-outline" href="#how">
+              See how it works
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

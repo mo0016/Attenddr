@@ -7,32 +7,49 @@ const students = [
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero-bg-nfc" aria-hidden="true">
-        <svg viewBox="0 0 460 460" width="460" height="460">
-          <circle className="ring r1" cx="230" cy="230" r="70" />
-          <circle className="ring r2" cx="230" cy="230" r="70" />
-          <circle className="ring r3" cx="230" cy="230" r="70" />
-        </svg>
-      </div>
-      <div className="wrap hero-grid">
-        <div>
-          <span className="badge">Built for Nigerian schools</span>
-          <h1>Know who&apos;s in class, and what they learned.</h1>
-          <p className="sub">
-            Attenddr is an Android tablet station at your classroom door.
-            Students check in with a tap or a glance, and the lesson turns
-            itself into quiz cards students can study from later.
-          </p>
-          <div className="ctas">
-            <a className="btn btn-primary" href="#cta">
-              Book a demo
-            </a>
-            <a className="btn btn-ghost" href="#cta">
-              Try it free for 30 days
-            </a>
-          </div>
-          <p className="fine">One campus, no cost, no commitment.</p>
+      <div className="hero-inner">
+        <span className="hero-badge">Built for Nigerian schools</span>
+        <h1>Know who&apos;s in class, and what they learned.</h1>
+        <p className="sub">
+          Attenddr is an Android tablet station at your classroom door.
+          Students check in with a tap or a glance, and the lesson turns
+          itself into quiz cards students can study from later.
+        </p>
+        <div className="ctas">
+          <a
+            className="btn btn-primary"
+            href="mailto:hello@attenddr.com?subject=Book%20a%2020-minute%20demo"
+          >
+            Book a demo
+          </a>
+          <a className="btn btn-outline" href="#how">
+            See how it works
+          </a>
         </div>
+        <p className="fine">One campus, no cost, no commitment.</p>
+      </div>
+
+      <div className="hero-visual">
+        <svg
+          className="hero-wave"
+          viewBox="0 0 1440 320"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M-40 190 Q 150 80 340 180 T 720 180 T 1100 180 T 1480 180"
+            stroke="#9DF5C3"
+            strokeWidth="30"
+            strokeLinecap="round"
+            opacity="0.55"
+          />
+          <path
+            d="M-40 210 Q 150 110 340 205 T 720 205 T 1100 205 T 1480 205"
+            stroke="#7CD2A3"
+            strokeWidth="44"
+            strokeLinecap="round"
+          />
+        </svg>
 
         <div className="device" aria-label="Live check-in preview">
           <div className="device-top">

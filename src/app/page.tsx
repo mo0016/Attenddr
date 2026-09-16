@@ -1,11 +1,11 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
+import Why from "@/components/Why";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
-import Audience from "@/components/Audience";
 import Pricing from "@/components/Pricing";
-import Closing from "@/components/Closing";
+import Reviews from "@/components/Reviews";
+import Faq from "@/components/Faq";
 import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
@@ -14,12 +14,12 @@ export default function Home() {
       <Nav />
       <main id="top">
         <Hero />
-        <Problem />
+        <Why />
         <HowItWorks />
         <Features />
-        <Audience />
         <Pricing />
-        <Closing />
+        <Reviews />
+        <Faq />
       </main>
       <SiteFooter />
     </>

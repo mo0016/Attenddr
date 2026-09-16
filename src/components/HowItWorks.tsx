@@ -4,6 +4,7 @@ type Step = {
   n: string;
   title: string;
   text: string;
+  featured?: boolean;
   icon: JSX.Element;
 };
 
@@ -18,7 +19,7 @@ const iconProps = {
 
 const steps: Step[] = [
   {
-    n: "1",
+    n: "Step 1",
     title: "Students check in",
     text: "A tap of an NFC card, or a glance at the camera for face recognition.",
     icon: (
@@ -31,7 +32,7 @@ const steps: Step[] = [
     ),
   },
   {
-    n: "2",
+    n: "Step 2",
     title: "Attendance logs itself",
     text: "No roll call. Records land straight in the dashboard, ready for reports.",
     icon: (
@@ -43,9 +44,10 @@ const steps: Step[] = [
     ),
   },
   {
-    n: "3",
+    n: "Step 3",
     title: "The terminal listens in",
     text: "The mic picks up the lesson and transcribes it as the teacher speaks.",
+    featured: true,
     icon: (
       <svg {...iconProps}>
         <rect x="9" y="2" width="6" height="12" rx="3" />
@@ -55,7 +57,7 @@ const steps: Step[] = [
     ),
   },
   {
-    n: "4",
+    n: "Step 4",
     title: "A quiz comes out the other end",
     text: "Ready for students to revise from, and teachers to reuse next term.",
     icon: (
@@ -70,9 +72,9 @@ const steps: Step[] = [
 
 export default function HowItWorks() {
   return (
-    <section id="how">
+    <section className="how" id="how">
       <div className="wrap">
-        <div className="section-head">
+        <div className="section-head center">
           <div className="tag">How it works?</div>
           <h2>One device, at the door, doing two jobs</h2>
           <p>
@@ -84,10 +86,10 @@ export default function HowItWorks() {
         </div>
         <div className="steps">
           {steps.map((step) => (
-            <div className="step" key={step.n}>
+            <div className={`step${step.featured ? " n" : ""}`} key={step.n}>
+              <span className="step-num">{step.n}</span>
               <div className="step-icon" aria-hidden="true">
                 {step.icon}
-                <span className="n">{step.n}</span>
               </div>
               <h4>{step.title}</h4>
               <p>{step.text}</p>

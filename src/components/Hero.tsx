@@ -1,7 +1,7 @@
 const students = [
-  { initial: "C", name: "Chidinma A.", time: "7:58 AM", color: "#6366F1" },
-  { initial: "T", name: "Tunde B.", time: "7:59 AM", color: "#F59E0B" },
-  { initial: "A", name: "Amaka O.", time: "8:03 AM", color: "#EC4899" },
+  { initial: "C", name: "Chidinma A.", time: "7:58 AM", color: "#0B5D4C" },
+  { initial: "T", name: "Tunde B.", time: "7:59 AM", color: "#12855F" },
+  { initial: "A", name: "Amaka O.", time: "8:03 AM", color: "#0F7860" },
 ];
 
 export default function Hero() {

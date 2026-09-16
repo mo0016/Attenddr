@@ -15,7 +15,7 @@ export default function Nav() {
               width="15"
               height="15"
               fill="none"
-              stroke="#ffffff"
+              stroke="#004540"
               strokeWidth="4.2"
               strokeLinecap="round"
               strokeLinejoin="round"
